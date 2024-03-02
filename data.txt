@@ -1,0 +1,60 @@
+Three.js
+
+// Clase 20 - Physics
+Appy Forces:
+-applyForce
+apply a force from a specific point in space (not neccesarily on the body's surface) like the wind, a small push on a domino or a strong force on an angry bird.
+-applyImpulse
+like applyForce but instead of adding to the force, will add to the velocity
+-applyLocalForce
+same as applyForce but the coordinates are local to the Body (0, 0, 0 would be the center of the body)
+-applyLocalImpulse
+same as applyImpulse but the coordinates are local to the Body
+
+// Class 21
+GL Transmission Format (glTF)
+- Supports different sets of data like geometries, materiales, cameras, lights, scene graph, animations, skeletons, morphing, skinning, etc.
+- Various formats like json, binary, embed textures
+- Becoming the standarr when it comes to real-time and most 3D softwares, game engines and libraries support it
+- You dont have to use GLTF in all cases ---> question the data u need, the wheight of the file, how mucho time to decompress it, etc
+
+FIND MODELS
+- The GLTF team provides various models for testing --->  https://github.com/KhronosGroup/glTF-Sample-Models = u need to clone the whole repository and take the files u need
+
+GLTF formats
+- glTF
+The default formart - Multiple files 
+The Duck.gltf file is a JSON that you can open in your editor. It contains various information like cameras, lights, scenes, materials, objects transformations, but neither the geometries nor the textures. The Duck0.bin file is a binary that you can't read like this. It usually contains data like the geometries and all information associated with the vertices like UV coordinates, normals, vertex colors, etc. 
+The DuckCM.png is simply the texture of the duck.
+When we load this format, we only load the Duck.gltf that contains references to the other files that will then be loaded automatically.
+
+- glTF-Binary
+This format is composed of only one file. It contains all the data we talked about in the glTF default format. 
+That is a binary file, and you can't just open it in your code editor to see what's inside.
+This format can be a little lighter and more comfortable to load because there is only one file, but you won't be able to easily alter its data. 
+For example, if you want to resize or compress the textures, you just can't because it's inside that binary file, merge with the rest.
+
+- glTF-Draco
+Like the glTF format, but the buffer data is compressed using the Draco Algorithm.
+Much lighter
+
+- glTF-Embedded
+One file like the glTF-Binary format, but the data is not binary.
+It's a JSON file that contains all the data, including the geometries and the textures.
+Heavier
+
+Animations
+- glTF supports animations
+
+Handle the animations
+The loaded gltf object contains a animations property composed of multiple AnimationClip
+We need to create an AnimationMixer
+An AnimationMixer is like a player associated with an object that can contain one or many AnimationClips
+
+// Class 23
+Modeling with Blender
+
+
+
+
+
